@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>中文学习小游戏 - 汉字消消乐、连连看、打字射击</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .header h1 {
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 15px;
+    }
+    
+    .header p {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.9);
+    }
+    
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      width: 100%;
+    }
+    
+    .game-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .game-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+    
+    .game-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    
+    .game-card h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    
+    .game-card .desc {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .game-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+    }
+    
+    .tag {
+      background: #f0f0f0;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    
+    .tag.hsk1 { background: #e8f5e9; color: #2e7d32; }
+    .tag.hsk2 { background: #f1f8e9; color: #558b2f; }
+    .tag.hsk3 { background: #fff3e0; color: #ef6c00; }
+    .tag.hsk4 { background: #ffe0b2; color: #e65100; }
+    .tag.hsk5 { background: #ffccbc; color: #d84315; }
+    .tag.hsk6 { background: #fce4ec; color: #c2185b; }
+    
+    .play-btn {
+      margin-top: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      pointer-events: none;
+    }
+    
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 600px) {
+      .header h1 { font-size: 2rem; }
+      .games-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎮 中文学习小游戏</h1>
+    <p>通过趣味游戏学习 HSK 1-6 级汉语词汇，边玩边学！</p>
+  </div>
+  
+  <div class="games-grid">
+    <a href="./hsk-match/index.html" class="game-card">
+      <div class="game-icon">🀄</div>
+      <h2>汉字连连看</h2>
+      <p class="desc">翻开卡片，找到汉字与拼音、释义的配对。考验你的记忆力和词汇量！</p>
+      <div class="tags">
+        <span class="tag hsk1">HSK 1</span>
+        <span class="tag hsk2">HSK 2</span>
+        <span class="tag hsk3">HSK 3</span>
+        <span class="tag hsk4">HSK 4</span>
+        <span class="tag hsk5">HSK 5</span>
+        <span class="tag hsk6">HSK 6</span>
+      </div>
+      <div class="play-btn">开始游戏</div>
+    </a>
+    
+    <a href="./word-crush/index.html" class="game-card">
+      <div class="game-icon">💎</div>
+      <h2>汉字消消乐</h2>
+      <p class="desc">在网格中找出相同汉字的配对，限时挑战，锻炼反应速度！</p>
+      <div class="tags">
+        <span class="tag hsk1">HSK 1</span>
+        <span class="tag hsk2">HSK 2</span>
+        <span class="tag hsk3">HSK 3</span>
+        <span class="tag hsk4">HSK 4</span>
+        <span class="tag hsk5">HSK 5</span>
+        <span class="tag hsk6">HSK 6</span>
+      </div>
+      <div class="play-btn">开始游戏</div>
+    </a>
+    
+    <a href="./ztype-shooter/index.html" class="game-card">
+      <div class="game-icon">🚀</div>
+      <h2>拼音打字射击</h2>
+      <p class="desc">输入正确的拼音击落敌人！考验打字速度和拼音准确度。</p>
+      <div class="tags">
+        <span class="tag hsk1">HSK 1</span>
+        <span class="tag hsk2">HSK 2</span>
+        <span class="tag hsk3">HSK 3</span>
+        <span class="tag hsk4">HSK 4</span>
+        <span class="tag hsk5">HSK 5</span>
+        <span class="tag hsk6">HSK 6</span>
+      </div>
+      <div class="play-btn">开始游戏</div>
+    </a>
+    
+    <a href="./flower-basket/index.html" class="game-card">
+      <div class="game-icon">🧺</div>
+      <h2>花篮接宝</h2>
+      <p class="desc">控制花篮接住正确拼音的汉字，落字接龙，趣味无穷！</p>
+      <div class="tags">
+        <span class="tag hsk1">HSK 1</span>
+        <span class="tag hsk2">HSK 2</span>
+        <span class="tag hsk3">HSK 3</span>
+        <span class="tag hsk4">HSK 4</span>
+        <span class="tag hsk5">HSK 5</span>
+        <span class="tag hsk6">HSK 6</span>
+      </div>
+      <div class="play-btn">开始游戏</div>
+    </a>
+  </div>
+  
+  <div class="footer">
+    <p>基于 HSK 1-6 词汇设计 | 共收录 1200+ 词汇 | 开源项目</p>
+  </div>
+</body>
+</html>

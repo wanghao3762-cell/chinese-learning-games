@@ -1,4 +1,4 @@
-# 拼音打字射击 - ZType Shooter
+# Chinese Pinyin 中文拼音打字 - ZType Shooter
 
 > 🎮 **在线试玩：** https://wanghao3762-cell.github.io/chinese-learning-games/ztype-shooter/
 
